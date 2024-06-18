@@ -22,6 +22,6 @@ COPY .env ./
 RUN npm ci --only=production
 
 # Copy the build output from the build stage
-COPY --from=build /app/build ./build/src
+COPY --from=build /app/build ./build
 
-CMD ["node", "build/src/index.js"]
+CMD ["node", "build/index.js"]
