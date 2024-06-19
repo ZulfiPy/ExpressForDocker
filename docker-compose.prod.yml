@@ -4,5 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
       target: production
+    image: zulfizupy/expressrwapi:prod
     ports:
       - 3500:3500

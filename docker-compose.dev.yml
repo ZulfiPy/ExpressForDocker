@@ -3,6 +3,7 @@ services:
     build:
       context: .
       target: build
+    image: zulfizupy/expressrwapi:dev
     volumes:
     - ./:/app
     - /app/node_modules
