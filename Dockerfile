@@ -17,7 +17,7 @@ RUN npm run build
 FROM node:18 AS production
 WORKDIR /app
 COPY package*.json .
-COPY .env ./
+ENV PORT=3500
 RUN npm ci --only=production
 # Copy the build output from the build stage
 COPY --from=build /app/build ./build
