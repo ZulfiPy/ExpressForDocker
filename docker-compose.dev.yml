@@ -2,7 +2,8 @@ services:
   api:
     build:
       context: .
-      target: build
+      # can be also build, bet set to dev
+      target: dev
     image: zulfizupy/expressrwapi:dev
     volumes:
     - ./:/app
