@@ -5,9 +5,9 @@ import tasksRouter from './routes/api/tasks'
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT
+const PORT = process.env.PORT as string
 
-app.get('/', async (req, res) => {
+app.get('/', async (req: Request, res: Response) => {
     res.send('Express + TypeScript server');
 });
 
