@@ -7,6 +7,7 @@ COPY package*.json .
 FROM base as dev
 RUN npm install
 COPY . .
+EXPOSE 3500
 CMD ["npm", "run", "dev"]
 
 # Build stage
@@ -17,8 +18,9 @@ RUN npm run build
 FROM node:18 AS production
 WORKDIR /app
 COPY package*.json .
-ENV PORT=3500
+
 RUN npm ci --only=production
 # Copy the build output from the build stage
 COPY --from=build /app/build ./build
+EXPOSE 3500
 CMD ["node", "build/index.js"]
